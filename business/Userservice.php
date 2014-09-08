@@ -5,7 +5,8 @@ class UserService{
         $userdb = new UserDAO();
         $userdb->CreateUser($username, $password, $email);
     }
-    public function LoginCheck($username){
+    public function LoginCheck($username){ 
+        $l;
         $use = new userDAO($username);
         $users = $use->GetByUsername($username);
         return $users;
