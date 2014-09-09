@@ -8,12 +8,6 @@ if(isset($_GET['submited']) && $_GET['submited']==true){
     $userSvc = new UserService();
     $user = $userSvc->LoginCheck($username);
     
-    /*echo '<br/>';
-    echo 'username post : ',$username,' . userobject geeft : ',$user->getUsername();
-    echo '<br/>';
-    echo 'username post : ',$password,' . userobject geeft : ',$user->getPassword();
-    echo '<br/>';*/
-    
     if ($username == $user->getUsername()&& $password == $user->getPassword()){
         $_SESSION["aangemeld"]=true;
         $_SESSION["user"]=  serialize($user);

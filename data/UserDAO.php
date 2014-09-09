@@ -26,16 +26,19 @@ class UserDAO{
     
     public function GetById($id){
         $dbh = new PDO(DBConfig::$DB_CONNSTRING,DBConfig::$DB_USERNAME,DBConfig::$DB_PASSWORD);
-        $sql="select id, username, password, email from users where username = '".$id."' ";
+        $sql="select id, username, password, email from users where id = '".$id."' ";
         $resultset=$dbh->query($sql);
         $rij = $resultset->fetch();
-        $user = User::create($rij["id"],$rij["username"],$rij["password"],$rij["email"]);
+        $used = User::create($rij["id"],$rij["username"],$rij["password"],$rij["email"]);
         $dbh=null;
-        return $user;
+        return $used;
     }
     
-    public function UpdateUserInfo(){
-        
+    public function UpdateUserInfo($id,$username,$password,$email){
+        $dbh = new PDO(DBConfig::$DB_CONNSTRING,DBConfig::$DB_USERNAME,DBConfig::$DB_PASSWORD);
+        $sql = "update users set username='" .$username. "', password='" .$password. "', email='".$email."' where id =".$id;
+        $dbh->exec($sql);
+        $dbh = null;
     }
     
 }

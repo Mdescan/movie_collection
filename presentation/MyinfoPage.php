@@ -32,7 +32,7 @@
                            echo 'username |',' password |',' email |','<br/>';
                            echo $user->getUsername(),' | ',$user->getPassword(),' | ',$user->getEmail(),' | ';
                            ?>
-                <a href="Myinfo.php?userid=<?php echo $user->getId();?>"><input type="button" value="update"/></a>
+                <a href="update.php?userid=<?php echo $user->getId();?>"><input type="button" value="update"/></a>
                            <?php
                     }else{
                 ?>

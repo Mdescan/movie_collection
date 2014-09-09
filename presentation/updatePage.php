@@ -25,26 +25,17 @@
             <section class="main_section">
                 <?php
                     if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]){
-                            echo 'welkom :',$user->getUsername();
                 ?>
                 <a href="Home.php?logout=true"><input type="button" value="logout"/></a>
-                <?php   
-                            echo '<br/>','we sended you an email for your payment to use our application','<br/>'
-                            ,'it was sent to the following address ',$user->getEmail();
-                            if(isset($_GET["error"]) && $_GET["error"] == 'ussercheat'){
-                            echo '<br/><br/><br/><br/><br/><br/>';
-                            echo 'STOP TRYING TO HACK IN USERS';
-                            }
-                    }else{
-                ?>
-                <form method="post" action="Home.php?submited=true">
-                    <input type="text" value="" placeholder="username" name="username"/>
-                    <input type="password" value="" placeholder="password" name="password"/>
-                    <input type="submit" value="enter"/>
-                    <a href="register.php"><input type="button" value="register"/></a>
+                <br/><br/>
+                <form method="post" action="update.php?userid=<?php echo $UppdateId; ?>&submited=true">
+                    <input type="text" value="<?php echo $user->getUsername();?>" placeholder="username" name="username"/>
+                    <input type="text" value="<?php echo $user->getPassword(); ?>" placeholder="password" name="password"/>
+                    <input type="email" value="<?php echo $user->getEmail(); ?>" placeholder="example@mail.com" name="email"/>
+                    <input type="submit" value="submit"/>
                 </form>
                 <?php
-                        }
+                    }
                 ?>
                 <br/>
                 <br/>
@@ -55,4 +46,6 @@
         </div>
     </body>
 </html>
+
+
 
