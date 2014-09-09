@@ -58,6 +58,18 @@ nav{
     color: #c9e3ea;
     background-color: #babdbe;
 }
+.subnav_list li{
+    list-style: none;
+    color: white;
+    padding: 0.25em 0.65em;
+    display: inline;
+    
+}
+.subnav_list li:hover{
+    list-style: none;
+    text-decoration: none;
+    color: #c9e3ea;
+}
 
 input{
     margin: 0.2em;

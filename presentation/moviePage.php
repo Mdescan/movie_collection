@@ -24,17 +24,15 @@
             </header>
             <section class="main_section">
                 <?php
-                    if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]){
+                if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]){
                 ?>
-                <a href="Home.php?logout=true"><input type="button" value="logout"/></a>
-                <?php   
-                           echo '<br/>','Uw info','<br/><br/>';
-                           echo 'username |',' password |',' email |','<br/>';
-                           echo $user->getUsername(),' | ',$user->getPassword(),' | ',$user->getEmail(),' | ';
-                           ?>
-                <a href="update.php?userid=<?php echo $user->getId();?>"><input type="button" value="update"/></a>
-                           <?php
-                    }else{
+                <a href="Home.php?logout=true"><input type="button" value="logout"/></a> 
+                <?php
+                }
+                ?>
+                <?php
+                    
+                    if(!isset($_SESSION["aangemeld"])){
                 ?>
                 <form method="post" action="Home.php?submited=true">
                     <input type="text" value="" placeholder="username" name="username"/>
@@ -45,6 +43,18 @@
                 <?php
                         }
                 ?>
+                <nav class="subnav">
+                    <ul class="subnav_list">
+                        <li><a href="movies.php">Movies list</a></li>
+                        <?php
+                        if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]){
+                            echo '<li><a href="MyaddedMovies.php">My added movies</a></li>';
+                            echo '<li><a href="addMovie.php">add movie</a></li>';
+                            
+                        }
+                        ?>
+                    </ul>
+                </nav>
                 <br/>
                 <br/>
             </section>
@@ -54,4 +64,3 @@
         </div>
     </body>
 </html>
-

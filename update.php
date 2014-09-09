@@ -30,7 +30,7 @@ if(isset($_GET["userid"]) && $_GET["userid"] == $user->getId()){
     $_SESSION["user"]=  serialize($user);
     $user=  unserialize($_SESSION["user"]);
 }else{
-    
+    //moglijk kan ik hier een doorverwijzing gebuirken naar een andere pagina
 }
 /*echo $_GET["userid"];
 echo $_GET["submited"];*/

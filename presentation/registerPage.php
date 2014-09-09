@@ -12,12 +12,7 @@
                 <nav class="main_nav">
                     <ul class="nav_list">
                         <li><a href="Home.php">Home</a></li>
-                        <li><a href="Home.php">Movies</a></li>
-                        <?php
-                        if(isset($_SESSION["aangemeld"]) && $_SESSION["aangemeld"]){
-                            echo '<li><a href="Home.php">My Info</a></li>';
-                        }
-                        ?>
+                        <li><a href="movies.php">Movies</a></li>
                     </ul>
                 </nav>
             </header>
@@ -35,10 +30,6 @@
                 </form>
                 <br/>
                 <br/>
-                <?php
-                    $_SESSION["nouvelle"]="wehave a new";
-                    echo $_SESSION["nouvelle"];
-                ?>
             </section>
             <footer class="main_footer">
                 footer
