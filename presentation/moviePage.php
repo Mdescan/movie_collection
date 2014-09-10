@@ -57,6 +57,12 @@
                 </nav>
                 <br/>
                 <br/>
+                <?php
+                        foreach ($list as $moviefrom){
+                            echo'<br/>';
+                            echo $moviefrom->getTitle(),' | ',$moviefrom->getGenre(),' | ',$moviefrom->getLength(),' | ',$moviefrom->getAddedBY();
+                        }
+                ?>
             </section>
             <footer class="main_footer">
                 

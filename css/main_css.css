@@ -26,7 +26,13 @@ a{
     border-bottom: thick white solid;
     
 }
-nav{
+.main_nav{
+    background-color: #1f2020;
+    padding: 2em 0;
+    margin: 0.5em;
+    border: solid #ffffff medium;
+}
+.subnav{
     background-color: #1f2020;
     padding: 2em 0;
     margin: 0.5em;
@@ -60,26 +66,16 @@ nav{
 }
 .subnav_list li{
     list-style: none;
+    padding: 0.25em 0.5em;
     color: white;
-    padding: 0.25em 0.65em;
-    display: inline;
-    
+    display: inline; 
+}
+nav .subnav_list{
+    padding: 0em 0;
+    margin: 0em;
 }
 .subnav_list li:hover{
     list-style: none;
     text-decoration: none;
     color: #c9e3ea;
-}
-
-input{
-    margin: 0.2em;
-}
-
-label{
-    margin: 0 0 0 0.5em;
-}
-
-input:required{
-    //background:hsl(180,50%,50%);
-    //border:1px solid #999;
 }
